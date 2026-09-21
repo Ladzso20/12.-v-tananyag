@@ -38,6 +38,42 @@ namespace ConsoleApp1
         {
             return title;
         }
-            
+
+        public List<Book> FindByAuthor(string author)
+        {
+            List<Book> result = new List<Book>();
+            foreach(Book book in _books)
+            {
+                if(book.Author == author)
+                {
+                    result.Add(book);
+                }           
+            }
+            return result;
+        }
+
+        public int TotalPages()
+        {
+            return _books.Select(x => x.Pagecount).Sum();
+        }
+
+
+        public double AveragePages()
+        {
+            return _books.Average(x => x.Pagecount);
+        }
+
+        public List<Book> AvailableBooks()
+        {
+            List<Book > books = new List<Book>();
+            foreach(Book book in _books)
+            {
+                if (_books.Contains(book))
+                {
+                    books.Add(book);
+                }
+            }
+            return books;
+        }
     }
 }
