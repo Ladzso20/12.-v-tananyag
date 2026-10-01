@@ -50,7 +50,7 @@ namespace ora09_28
         public string Describe()
         {
             string i = "";
-            if (IsStudent == false)
+            if (IsStudent == true)
             {
                i = ($"{Name} ({Age} éves diák) - {Visits} látogatás.");
             }
@@ -59,7 +59,6 @@ namespace ora09_28
                 i = ($"{Name} ({Age} éves normál) - {Visits} látogatás.");
             }
             return i;
-            
             
         }
     }
