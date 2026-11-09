@@ -27,9 +27,9 @@ namespace SocialFeed
             string descString = Text;
             if (Text.Length > 20)
             {
-                descString = Text.Substring(0, 20);
+                descString = Text.Substring(0, 20) + "...";
             }
-            return base.GetDescription() + $": {descString}...";
+            return base.GetDescription() + $": {descString}";
         }
     }
 }
