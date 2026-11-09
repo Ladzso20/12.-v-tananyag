@@ -22,5 +22,17 @@ namespace SocialFeed
             _likes = 0;
 
         }
+
+        public virtual bool Like()
+        {
+            _likes++;
+            return true;
+        }
+
+        public virtual string GetDescription()
+        {
+            return $"{Author}, {Like} kedveles";
+        }
+        public abstract int Score();
     }
 }
