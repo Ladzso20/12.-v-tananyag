@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SocialFeed
 {
-    internal class ImagePost : Post
+    public class ImagePost : Post
     {
         private int _imageCount;
 
@@ -38,7 +38,7 @@ namespace SocialFeed
 
         public override string GetDescription()
         {
-            return $"{Author}, {Like} kedvelés,{ImageCount} kép";
+            return $"{Author}, {Like} kedvelés,{_imageCount} kép";
         }
     }
 }

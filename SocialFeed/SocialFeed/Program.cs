@@ -1,6 +1,6 @@
 ﻿namespace SocialFeed
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -25,6 +25,25 @@
             Console.WriteLine(img1.GetDescription());
             ImagePost img2 = new ImagePost("D", 15);
             Console.WriteLine(img2.GetDescription());
+
+            PollPost poll1 = new PollPost("E");
+            poll1.Like();
+            poll1.Like();
+            for (int i= 0; i < 4; i++)
+            {
+                poll1.Vote();
+            }
+            poll1.Close();
+            Console.WriteLine(poll1.Like());
+            Console.WriteLine(poll1.Vote());
+            Console.WriteLine(poll1.GetDescription());
+
+            ModerationQueue moderation = new ModerationQueue();
+            moderation.ReportItem(a);
+            Console.WriteLine(moderation.ToReview.Count);
+            moderation.ReportItem(a);
+            moderation.ReportItem(a);
+            Console.WriteLine(moderation.ToReview.Count);
         }
     }
 }
